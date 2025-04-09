@@ -1,0 +1,30 @@
+function realizarOperacion(num1, num2, operacion) {
+    
+    if (operacion === "+") {
+        return num1 + num2;
+    } else if (operacion === "-") {
+        return num1 - num2;
+    } else if (operacion === "*") {
+        return num1 * num2;
+    } else if (operacion === "/") {
+
+        if (num2 === 0) {
+            return "Error: No se puede dividir por cero.";
+        } else {
+            return num1 / num2;
+        }
+    } else {
+        return "Error: Operación no válida.";
+    }
+}
+while (true) {
+    let num1 = parseFloat(prompt("Ingrese el primer número: "));
+    let num2 = parseFloat(prompt("Ingrese el segundo número: "));
+    let operacion = prompt("Ingrese la operación (suma, resta, multiplicacion, division) o 'salir' para terminar: ").toLowerCase();
+    if (operacion === "salir") {
+        alert("¡Hasta luego!");
+        break;
+    }
+    let resultado = realizarOperacion(num1, num2, operacion);
+    alert(`Resultado: ${resultado}`);
+}
